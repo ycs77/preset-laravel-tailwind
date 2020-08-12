@@ -1,6 +1,4 @@
 const { Preset } = require('use-preset')
-const spawn = require('cross-spawn')
-const hasYarn = spawn.sync('yarn', ['--version']).status === 0
 
 // prettier-ignore
 module.exports = Preset.make('Laravel Tailwind CSS')
@@ -40,4 +38,9 @@ module.exports = Preset.make('Laravel Tailwind CSS')
     .title('Install node dependencies')
     .chain()
 
-  .run(hasYarn ? 'yarn' : 'npm', [hasYarn ? 'upgrade' : 'update'])
+  .updateDependencies()
+    .if(({ flags }) => Boolean(flags.interaction))
+    .withoutAsking()
+    .for('node')
+    .title('Update node dependencies')
+    .chain()
