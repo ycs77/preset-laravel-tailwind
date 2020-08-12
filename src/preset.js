@@ -1,6 +1,5 @@
 const { Preset } = require('use-preset')
 const spawn = require('cross-spawn')
-
 const hasYarn = spawn.sync('yarn', ['--version']).status === 0
 
 // prettier-ignore
