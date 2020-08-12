@@ -1,5 +1,5 @@
 {
-  "name": "laravel-tailwindcss",
+  "name": "lucas-preset-laravel-tailwindcss",
   "license": "MIT",
   "preset": "src/preset.js",
   "version": "0.1.0",
