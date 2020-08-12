@@ -11,6 +11,7 @@
 | your own base styles.
 |
 */
+
 @import 'tailwindcss/base';
 @import 'base';
 
@@ -26,6 +27,7 @@
 | your own components.
 |
 */
+
 @import 'tailwindcss/components';
 @import 'components';
 
@@ -37,4 +39,5 @@
 | This directive injects Tailwind's utilities.
 |
 */
+
 @import 'tailwindcss/utilities';
