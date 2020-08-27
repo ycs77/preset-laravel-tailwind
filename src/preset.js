@@ -19,7 +19,7 @@ module.exports = Preset.make('Laravel Tailwind CSS')
         '@tailwindcss/typography': '^0.2',
         'postcss-nested': '^4',
         'postcss-import': '^12',
-        tailwindcss: '^1.6'
+        tailwindcss: '^1.7'
       }
     })
     .delete(['devDependencies.sass', 'devDependencies.sass-loader'])
