@@ -13,9 +13,7 @@ Preset.extract('default').withTitle('Extracting templates...')
 
 Preset.edit('webpack.mix.js')
   .withTitle(`Updating ${color.magenta('webpack.mix.js')}...`)
-  .update(content => {
-    return content.replace(/(\.postCss[^\n]+\n)[ \t]+\/\/\r?\n/, '$1')
-  })
+  .update(content => content.replace(/(\.postCss[^\n]+\n)[ \t]+\/\/\r?\n/, '$1'))
   .addAfter('postCss', [
     '  require(\'postcss-import\'),',
     '  require(\'tailwindcss\'),',
