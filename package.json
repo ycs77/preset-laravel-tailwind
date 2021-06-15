@@ -1,11 +1,10 @@
 {
-  "name": "lucas-preset-laravel-tailwindcss",
-  "license": "MIT",
-  "preset": "src/preset.js",
+  "name": "ycs77-preset-laravel-tailwindcss",
   "version": "0.1.0",
-  "private": "true",
+  "author": "Lucas Yang",
+  "license": "MIT",
+  "preset": "preset.ts",
   "devDependencies": {
-    "lodash": "^4.17",
-    "use-preset": "^0.1.24"
+    "apply": "^0.0.1"
   }
 }
