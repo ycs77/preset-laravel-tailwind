@@ -6,7 +6,7 @@ Preset.option('install', true)
 Preset.option('gitignore', false)
 
 Preset.apply('ycs77/preset-laravel')
-  .with(['--no-interaction', '--no-install'])
+  .with('--no-interaction')
   .ifOption('init')
 
 Preset.extract('default').withTitle('Extracting templates...')
