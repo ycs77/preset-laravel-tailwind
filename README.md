@@ -24,7 +24,7 @@
 <br />
 
 <div align="center">
-  Lucas 的 Laravel 專案預設
+  在 Laravel 專案安裝 Tailwind CSS
   <br />
   <br />
   <a href="https://github.com/ycs77/preset-laravel-tailwindcss/blob/main/preset.ts">查看執行內容</a> - <a href="https://preset.dev">Preset 文檔</a> - <a href="https://github.com/ycs77/presets">Lucas 的 Presets</a>
