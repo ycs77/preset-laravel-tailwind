@@ -5,22 +5,23 @@ Preset.option('init', true)
 Preset.option('install', true)
 Preset.option('gitignore', false)
 
-Preset.apply('ycs77/preset-laravel-init')
+Preset.apply('ycs77/preset-laravel')
+  .with(['--no-interaction', '--no-install'])
   .ifOption('init')
 
-Preset.group((preset) => {
-  preset.extract('default')
-}).withTitle('Extracting templates...')
+Preset.extract('default').withTitle('Extracting templates...')
 
 Preset.edit('webpack.mix.js')
   .withTitle(`Updating ${color.magenta('webpack.mix.js')}...`)
   .update(content => {
-    return content
-      .replace(
-        '.postCss(\'resources/css/app.css\', \'public/css\', [\n    //',
-        '.postCss(\'resources/css/app.css\', \'public/css\', [\n    require(\'postcss-import\'),\n    require(\'tailwindcss\'),\n    require(\'postcss-nested\'),\n    require(\'autoprefixer\'),'
-      )
+    return content.replace(/(\.postCss[^\n]+\n)[ \t]+\/\/\r?\n/, '$1')
   })
+  .addAfter('postCss', [
+    '  require(\'postcss-import\'),',
+    '  require(\'tailwindcss\'),',
+    '  require(\'postcss-nested\'),',
+    '  require(\'autoprefixer\'),',
+  ])
 
 Preset.edit('.gitignore')
   .withTitle(`Updating ${color.magenta('.gitignore')}...`)
