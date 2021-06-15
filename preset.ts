@@ -45,5 +45,5 @@ Preset.group((preset) => {
 
 Preset.instruct([
   `Run ${color.magenta('npm run dev')} or ${color.magenta('yarn dev')}`,
-  `Docs: ${color.magenta('https://tailwindcss.com/docs/guides/laravel')}`,
+  `Docs: ${color.magenta('https://tailwindcss.com')}`,
 ])
