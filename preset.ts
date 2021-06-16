@@ -30,7 +30,7 @@ Preset.edit('.gitignore')
     '/public/mix-manifest.json',
   ])
 
-Preset.group((preset) => {
+Preset.group(preset => {
   preset
     .editNodePackages()
     .addDev('tailwindcss', '^2.1.0')
@@ -38,6 +38,22 @@ Preset.group((preset) => {
     .addDev('postcss', '^8.3.0')
     .addDev('postcss-import', '^14.0')
     .addDev('postcss-nested', '^5.0')
+
+  preset.edit('package.json')
+    .update(original => {
+      let content = JSON.parse(original)
+      const indent = original.match(/^{\r?\n([ \t]+)/)[1]
+      const sortProps = ['dependencies', 'devDependencies']
+      sortProps.forEach(prop => {
+        if (!content[prop]) return
+        content[prop] = Object.keys(content[prop]).sort().reduce((obj, key) => {
+          obj[key] = content[prop][key]
+          return obj
+        }, {})
+      })
+      return JSON.stringify(content, null, indent)+'\n'
+    })
+
   preset.installDependencies().ifOption('install')
 }).withTitle('Installing dependencies...')
 
