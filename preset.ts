@@ -39,17 +39,21 @@ Preset.group(preset => {
     .addDev('postcss-import', '^14.0')
     .addDev('postcss-nested', '^5.0')
 
+  // Sort node dependencies...
   preset.edit('package.json')
     .update(original => {
       let content = JSON.parse(original)
       const indent = original.match(/^{\r?\n([ \t]+)/)[1]
-      const sortProps = ['dependencies', 'devDependencies']
-      sortProps.forEach(prop => {
-        if (!content[prop]) return
-        content[prop] = Object.keys(content[prop]).sort().reduce((obj, key) => {
-          obj[key] = content[prop][key]
+      const sortObject = (unsortObj: object, compareFn?: (a: string, b: string) => number) => Object
+        .keys(unsortObj).sort(compareFn).reduce((obj, key) => {
+          obj[key] = unsortObj[key]
           return obj
         }, {})
+      const sortProps = ['dependencies', 'devDependencies']
+      content = sortObject(content, (a, b) => a === sortProps[0] && b === sortProps[1] ? -1 : 1)
+      sortProps.forEach(prop => {
+        if (!content[prop]) return
+        content[prop] = sortObject(content[prop])
       })
       return JSON.stringify(content, null, indent)+'\n'
     })
