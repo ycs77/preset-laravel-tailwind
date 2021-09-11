@@ -19,7 +19,7 @@
   </a>
   <br />
   <br />
-  <pre align="center">npx apply ycs77/preset-laravel-tailwindcss</pre>
+  <pre align="center">npx apply ycs77/preset-laravel-tailwind</pre>
 </p>
 <br />
 
@@ -27,5 +27,5 @@
   在 Laravel 專案安裝 Tailwind CSS
   <br />
   <br />
-  <a href="https://github.com/ycs77/preset-laravel-tailwindcss/blob/main/preset.ts">查看執行內容</a> - <a href="https://preset.dev">Preset 文檔</a> - <a href="https://github.com/ycs77/preset">Lucas 的 Presets</a>
+  <a href="https://github.com/ycs77/preset-laravel-tailwind/blob/main/preset.ts">查看執行內容</a> - <a href="https://preset.dev">Preset 文檔</a> - <a href="https://github.com/ycs77/preset">Lucas 的 Presets</a>
 </div>
