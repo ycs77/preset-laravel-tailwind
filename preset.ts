@@ -16,8 +16,8 @@ Preset.edit('webpack.mix.js')
   .update(content => content.replace(/(\.postCss[^\n]+\n)[ \t]+\/\/\r?\n/, '$1'))
   .addAfter('postCss', [
     '  require(\'postcss-import\'),',
+    '  require(\'tailwindcss/nesting\'),',
     '  require(\'tailwindcss\'),',
-    '  require(\'postcss-nested\'),',
     '  require(\'autoprefixer\'),',
   ])
 
@@ -33,11 +33,10 @@ Preset.edit('.gitignore')
 Preset.group(preset => {
   preset
     .editNodePackages()
-    .addDev('tailwindcss', '^2.1.0')
+    .addDev('tailwindcss', '^2.2.0')
     .addDev('autoprefixer', '^10.0')
     .addDev('postcss', '^8.3.0')
     .addDev('postcss-import', '^14.0')
-    .addDev('postcss-nested', '^5.0')
 
   // Sort node dependencies...
   preset.edit('package.json')
