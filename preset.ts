@@ -33,7 +33,7 @@ Preset.edit('.gitignore')
 Preset.group(preset => {
   preset
     .editNodePackages()
-    .addDev('tailwindcss', '^2.2.0')
+    .addDev('tailwindcss', '^3.0.0')
     .addDev('autoprefixer', '^10.0')
     .addDev('postcss', '^8.3.0')
     .addDev('postcss-import', '^14.0')
