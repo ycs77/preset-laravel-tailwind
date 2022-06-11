@@ -10,16 +10,9 @@
 
 <p align="center">
   <br />
-  <a href="https://www.npmjs.com/package/apply">
-    <img alt="npm" src="https://img.shields.io/npm/v/apply?label=preset&style=flat-square">
-  </a>
-  <span>&nbsp;</span>
-  <a href="https://github.com/ycs77/preset">
-    <img alt="npm" src="https://img.shields.io/badge/lucas--preset-laravel--tailwindcss-blue?style=flat-square">
-  </a>
-  <br />
-  <br />
-  <pre align="center">npx apply ycs77/preset-laravel-tailwind</pre>
+  <pre align="center">npx @preset/cli apply ycs77/preset-laravel-tailwind</pre>
+  <p align="center">本地運行：</p>
+  <pre align="center">preset apply ycs77/preset-laravel-tailwind</pre>
 </p>
 <br />
 
