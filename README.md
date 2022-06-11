@@ -10,9 +10,9 @@
 
 <p align="center">
   <br />
-  <pre align="center">npx @preset/cli apply ycs77/preset-laravel-tailwind</pre>
+  <pre align="center">npx @ycs77/preset laravel-tailwind</pre>
   <p align="center">本地運行：</p>
-  <pre align="center">preset apply ycs77/preset-laravel-tailwind</pre>
+  <pre align="center">ycs77-preset laravel-tailwind</pre>
 </p>
 <br />
 
